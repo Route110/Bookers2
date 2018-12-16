@@ -1,0 +1,21 @@
+<div class="container">
+<div class="row">
+<div class="col-xs-3">
+    <%= render 'side',{user:current_user, book:Book.new} %>
+</div>
+
+<div class="col-xs-9">
+    <table class="table">
+    <h1>Books</h1>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+    <%= render @books %>
+    </table>
+</div>
+</div>
+</div>
