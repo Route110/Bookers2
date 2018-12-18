@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     if current_user
     @user = User.find(params[:id])
      if @user.update(user_params)
+      flash[:success] = "successfully"
       redirect_to user_path(@user.id)
      else
       flash[:danger] = @user.errors.full_messages
