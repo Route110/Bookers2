@@ -39,7 +39,8 @@ class UsersController < ApplicationController
       flash[:success] = "successfully"
       redirect_to user_path(@user.id)
      else
-      render 'edit'
+      flash[:danger] = @user.errors.full_messages
+      redirect_back(fallback_location: root_url)
      end
   end
 
